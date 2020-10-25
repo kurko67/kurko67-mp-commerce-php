@@ -1,5 +1,5 @@
 
-    <?php require_once('pagar.php'); ?>
+    <?php require('pagar.php'); ?>
 
 
 <!DOCTYPE html>
