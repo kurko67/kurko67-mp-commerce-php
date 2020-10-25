@@ -1,4 +1,8 @@
+<?php
 
+  require 'pagar.php';
+
+ ?>
 
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US">
