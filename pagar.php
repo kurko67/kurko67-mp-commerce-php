@@ -31,9 +31,11 @@ $item->currency_id = "ARS";
 $item->unit_price = $price;
 $preference->items = array($item);
 
-$preference->notification_url = "https://www.lavillademerlo.com.ar/mercadopago/noti.php?source_news=webhooks";
+$preference->notification_url = "https://kurko67-mp-commerce-php.herokuapp.com/noti.php?source_news=webhooks";
 
 $preference->payment_methods = array(
+
+    //excluimos metodos de pago
 
     "excluded_payment_methods" => array(
     array("id" => "amex" ) ),
@@ -41,15 +43,17 @@ $preference->payment_methods = array(
     "excluded_payment_types" => array(
     array("id" => "atm" ) ),
 
+    //definimos hasta 6 cuotas
+
     "installments" => 6
 );
 
-$preference->external_reference = "hernandosolis@hotmail.com";
+$preference->external_reference = "maxidalaniz@hotmail.com";
 
 $preference->back_urls = array(
-    "success" => "https://www.lavillademerlo.com.ar/mercadopago/success.php?collection_id=[PAYMENT_ID]&external_reference=[EXTERNAL_REFERENCE]&payment_type=[PAYMENT_METHOD_ID]",
-    "failure" => "https://www.lavillademerlo.com.ar/mercadopago/failure.php",
-    "pending" => "https://www.lavillademerlo.com.ar/mercadopago/pending.php"
+    "success" => "https://kurko67-mp-commerce-php.herokuapp.com/success.php?collection_id=[PAYMENT_ID]&external_reference=[EXTERNAL_REFERENCE]&payment_type=[PAYMENT_METHOD_ID]",
+    "failure" => "https://kurko67-mp-commerce-php.herokuapp.com/failure.php",
+    "pending" => "https://kurko67-mp-commerce-php.herokuapp.com/pending.php"
 );
 
 
