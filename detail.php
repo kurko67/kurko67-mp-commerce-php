@@ -1,3 +1,6 @@
+<?php
+    require __DIR__ .  '/pagar.php';
+ ?>
 
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -131,8 +134,10 @@
                                         </h3>
                                         <h3 >
                                             <?php echo "$" . $_POST['unit'] ?>
+                                            unidad/es
                                         </h3>
                                     </div>
+
                                     <script
                                       src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                       data-preference-id="<?php echo $preference->id; ?>">
