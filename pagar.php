@@ -1,11 +1,11 @@
 <?php
 
-$title=$_GET['title'];
-$price=$_GET['price'];
-$unit=$_GET['unit'];
-$img=$_GET['img'];
-$desc=$_GET['desc'];
-$external=$_GET['external'];
+$title= $_POST['title'];
+$price=$_POST['price'];
+$unit=$_POST['unit'];
+$img=$_POST['img'];
+$desc=$_POST['desc'];
+$external=$_POST['external'];
 
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
@@ -31,7 +31,7 @@ $item->currency_id = "ARS";
 $item->unit_price = $price;
 $preference->items = array($item);
 
-$preference->notification_url = "https://kurko67-mp-commerce-php.herokuapp.com/noti.php?source_news=webhooks";
+$preference->notification_url = "http://localhost:8080/mercadopago/noti.php?source_news=webhooks";
 
 $preference->payment_methods = array(
 
@@ -51,9 +51,9 @@ $preference->payment_methods = array(
 $preference->external_reference = "maxidalaniz@hotmail.com";
 
 $preference->back_urls = array(
-    "success" => "https://kurko67-mp-commerce-php.herokuapp.com/success.php?collection_id=[PAYMENT_ID]&external_reference=[EXTERNAL_REFERENCE]&payment_type=[PAYMENT_METHOD_ID]",
-    "failure" => "https://kurko67-mp-commerce-php.herokuapp.com/failure.php",
-    "pending" => "https://kurko67-mp-commerce-php.herokuapp.com/pending.php"
+    "success" => "http://localhost:8080/mercadopago/success.php?collection_id=[PAYMENT_ID]&external_reference=[EXTERNAL_REFERENCE]&payment_type=[PAYMENT_METHOD_ID]",
+    "failure" => "http://localhost:8080/mercadopago/failure.php",
+    "pending" => "http://localhost:8080/mercadopago/pending.php"
 );
 
 
