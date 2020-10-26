@@ -31,7 +31,7 @@ $item->currency_id = "ARS";
 $item->unit_price = $price;
 $preference->items = array($item);
 
-$preference->notification_url = "http://localhost:8080/mercadopago/noti.php?source_news=webhooks";
+$preference->notification_url = "https://kurko67-mp-commerce-php.herokuapp.com/mercadopago/noti.php?source_news=webhooks";
 
 $preference->payment_methods = array(
 
@@ -51,9 +51,9 @@ $preference->payment_methods = array(
 $preference->external_reference = "maxidalaniz@hotmail.com";
 
 $preference->back_urls = array(
-    "success" => "http://localhost:8080/mercadopago/success.php?collection_id=[PAYMENT_ID]&external_reference=[EXTERNAL_REFERENCE]&payment_type=[PAYMENT_METHOD_ID]",
-    "failure" => "http://localhost:8080/mercadopago/failure.php",
-    "pending" => "http://localhost:8080/mercadopago/pending.php"
+    "success" => "https://kurko67-mp-commerce-php.herokuapp.com/success.php?collection_id=[PAYMENT_ID]&external_reference=[EXTERNAL_REFERENCE]&payment_type=[PAYMENT_METHOD_ID]",
+    "failure" => "https://kurko67-mp-commerce-php.herokuapp.com/failure.php",
+    "pending" => "https://kurko67-mp-commerce-php.herokuapp.com/pending.php"
 );
 
 
